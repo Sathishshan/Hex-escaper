@@ -39,12 +39,12 @@ case $1 in
 		;;
 	-we | -ew)
 		echo -e ${green}"Hex value with whitespace is escaped!"${none}
-		echo "$2" | sed 's/ //g' | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/\b/\\x/'
+		echo "$2" | sed 's/\s//g' | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/\b/\\x/'
 		echo
 		;;
 	-wre | -erw | -rwe |-ewr)
 		echo -e ${green}"Hex value reversed with whitespace!"${none}
-		echo "$2" | sed 's/\\x/ /g' | sed 's/^ //'
+		echo "$2" | sed 's/\\x/ /g' | sed 's/^\s//'
 		;;
 	*)
 		usage
