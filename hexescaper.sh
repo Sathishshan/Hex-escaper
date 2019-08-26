@@ -6,8 +6,7 @@ blue="\e[34m"
 none="\e[0m"
 
 function usage {
-echo -e "
-Please use the hex value in ${red}"double quotes"!${none} :D
+echo -e "Please use the hex value in ${red}"double quotes"!${none} :D
 
 ${blue}USAGE:${none}
       	$0 Option Hex
@@ -21,9 +20,10 @@ ${blue}OPTIONS:${none}
 }
 
 if [ ${#} -ne 2 ]; then
-       echo -e ${none}"Need two arguments to run the script."${none}
-       usage
-       exit
+        echo -e ${none}"Need two arguments to run the script."${none}
+	echo
+        usage
+        exit
 fi
 
 case $1 in
