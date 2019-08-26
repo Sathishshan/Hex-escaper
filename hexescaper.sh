@@ -12,7 +12,7 @@ Please use the hex value with ${red}"double quotes"!${none} :D
 ${blue}USAGE:${none}
       	$0 Option Hex
 ${blue}EXAMPLE:${none}
-        $0 -e 735f796172612d72756c65736574
+        $0 -e \"735f796172612d72756c65736574\"
 ${blue}OPTIONS:${none}
 	-e		Escape_hex
 	-r		Reverse_hex_escape
