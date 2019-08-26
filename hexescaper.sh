@@ -7,7 +7,7 @@ none="\e[0m"
 
 function usage {
 echo -e "
-Please use the hex value with ${red}"double quotes"!${none} :D
+Please use the hex value in ${red}"double quotes"!${none} :D
 
 ${blue}USAGE:${none}
       	$0 Option Hex
