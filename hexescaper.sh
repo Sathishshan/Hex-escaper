@@ -42,7 +42,7 @@ case $1 in
 		echo "$2" | sed 's/\s//g' | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/\b/\\x/'
 		echo
 		;;
-	-wre | -erw | -rwe |-ewr)
+	-wre | -erw | -rwe | -ewr | -wer)
 		echo -e ${green}"Hex value reversed with whitespace!"${none}
 		echo "$2" | sed 's/\\x/ /g' | sed 's/^\s//'
 		;;
