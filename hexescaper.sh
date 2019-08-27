@@ -37,6 +37,7 @@ case "$1" in
   -r)
     echo -e ${green}"Hex value reversed the escape!"${none}
     echo -n "$2" | sed 's/\\x//g'
+    echo
     ;;
   -we | -ew)
     echo -e ${green}"Hex value with whitespace is escaped!"${none}
@@ -46,6 +47,7 @@ case "$1" in
   -wre | -erw | -rwe | -ewr | -wer | -rew)
     echo -e ${green}"Hex value reversed with whitespace!"${none}
     echo -n "$2" | sed 's/\\x/ /g' | sed 's/^\s//'
+    echo
     ;;
   -E)
     echo -e ${green}"Converted the text to hex!"${none}
@@ -54,6 +56,7 @@ case "$1" in
   -D)
     echo -e ${green}"Reversed the hex to text!"${none}
     echo -n "$2" | xxd -ps -r
+    echo
     ;;
   *)
     usage
