@@ -13,12 +13,12 @@ ${blue}USAGE:${none}
 ${blue}EXAMPLE:${none}
         $0 -e \"735f796172612d72756c65736574\"
 ${blue}OPTIONS:${none}
-  -e    Escape_hex
-  -r    Reverse_hex_escape
-  -we   White_escape
-  -wre    White_reverse_escape
-  -E    Encode_hex - (Convert)
-  -D    Reverse_hex - (Decode)"
+        -e              Escape_hex
+        -r              Reverse_hex_escape
+        -we             White_escape
+        -wre            White_reverse_escape
+        -E              Encode_hex - (Convert)
+        -D              Reverse_hex - (Decode)"
 }
 
 if [ ${#} -ne 2 ]; then
