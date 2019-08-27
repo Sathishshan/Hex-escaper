@@ -16,7 +16,9 @@ ${blue}OPTIONS:${none}
 	-e		Escape_hex
 	-r		Reverse_hex_escape
 	-we		White_escape
-	-wre		White_reverse_escape"
+	-wre		White_reverse_escape
+	-E		Encode_hex - (Convert)
+	-D		Reverse_hex - (Decode)"
 }
 
 if [ ${#} -ne 2 ]; then
@@ -31,7 +33,6 @@ case $1 in
 		echo -e ${green}"Hex value escaped!"${none}
 		echo "$2" | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/^/\\x/'
 		echo
-		shift
 		;;
 	-r)
 		echo -e ${green}"Hex value reversed the escape!"${none}
@@ -45,6 +46,14 @@ case $1 in
 	-wre | -erw | -rwe | -ewr | -wer | -rew)
 		echo -e ${green}"Hex value reversed with whitespace!"${none}
 		echo "$2" | sed 's/\\x/ /g' | sed 's/^\s//'
+		;;
+	-E)
+		echo -e ${green}"Converted the text to hex!"${none}
+		echo "$2" | xxd -ps
+		;;
+	-D)
+		echo -e ${green}"Reversed the hex to text!"${none}
+		echo "$2" | xxd -ps -r
 		;;
 	*)
 		usage
