@@ -46,3 +46,5 @@ shan@exploit:~$ ./hexescaper.sh -D "68657865736361706572"
 Reversed the hex to text!
 hexescaper
 ```
+#### Caution:   
+The hex values not have been validated it is hex or not, so if you give correct input it will give you the correct output!
