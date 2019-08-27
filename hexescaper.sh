@@ -28,7 +28,7 @@ if [ ${#} -ne 2 ]; then
         exit
 fi
 
-case $1 in
+case "$1" in
 	-e)
 		echo -e ${green}"Hex value escaped!"${none}
 		echo "$2" | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/^/\\x/'
