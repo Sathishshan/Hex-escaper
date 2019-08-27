@@ -3,15 +3,17 @@
 ```
 Need two arguments to run the script.
 
-Please use the hex value with double quotes! :D
+Please use the hex value in double quotes! :D
 
 USAGE:
-      	./hexescaper.sh Option Hex
+        ./escape_hex Option Hex
 EXAMPLE:
-        ./hexescaper.sh -e 735f796172612d72756c65736574
+        ./escape_hex -e "735f796172612d72756c65736574"
 OPTIONS:
-	-e		Escape_hex
-	-r		Reverse_hex_escape
-	-we		White_escape
-	-wre		White_reverse_escape
+        -e              Escape_hex
+        -r              Reverse_hex_escape
+        -we             White_escape
+        -wre            White_reverse_escape
+        -E              Encode_hex - (Convert)
+        -D              Reverse_hex - (Decode)
 ```
