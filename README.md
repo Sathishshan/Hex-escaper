@@ -1,5 +1,7 @@
 ### Hex-escaper
 
+Hex-escaper is used to escape the Hex code and vise-versa and also Encode Decode text into Hex and vise-versa. In PCRE Regex we have broke the hex code into pair of pieces and escape them with \x (the primitive type escape sequence) to match the pattern. It is very useful & comes to handy once you debugging hex code for Regex (PCRE)
+
 ```
 Need two arguments to run the script.
 
