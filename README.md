@@ -40,6 +40,7 @@ shan@exploit:~$ ./hexescaper -dr "\\x68\\x65\\x78\\x65\\x73\\x63\\x61\\x70\\x65\
 Hex value reversed the double escape!
 \x68\x65\x78\x65\x73\x63\x61\x70\x65\x72
 ```
+
 ```
 shan@exploit:~$ ./hexescaper.sh -we "68 65 78 65 73 63 61 70 65 72"
 Hex value with whitespace is escaped!
@@ -49,6 +50,7 @@ shan@exploit:~$ ./hexescaper.sh -wre "\x68\x65\x78\x65\x73\x63\x61\x70\x65\x72"
 Hex value reversed with whitespace!
 68 65 78 65 73 63 61 70 65 72
 ```
+
 ```
 shan@exploit:~$ ./hexescaper.sh -E "hexescaper"
 Converted the text to hex!
@@ -58,5 +60,6 @@ shan@exploit:~$ ./hexescaper.sh -D "68657865736361706572"
 Reversed the hex to text!
 hexescaper
 ```
+
 #### Caution:   
 The hex values not have been validated it is hex or not, so if you give correct input it will give you the correct output!
