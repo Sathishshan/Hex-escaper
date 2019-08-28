@@ -17,6 +17,7 @@ ${blue}OPTIONS:${none}
         -r              Reverse_hex_escape
         -we             White_escape
         -wre            White_reverse_escape
+        -w              Just white space b/w hex
         -E              Encode_hex - (Convert)
         -D              Reverse_hex - (Decode)"
 }
@@ -29,37 +30,42 @@ if [ ${#} -ne 2 ]; then
 fi
 
 case "$1" in
-  -e)
-    echo -e ${green}"Hex value escaped!"${none}
-    echo -n "$2" | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/^/\\x/'
-    echo
-    ;;
-  -r)
-    echo -e ${green}"Hex value reversed the escape!"${none}
-    echo -n "$2" | sed 's/\\x//g'
-    echo
-    ;;
-  -we | -ew)
-    echo -e ${green}"Hex value with whitespace is escaped!"${none}
-    echo -n "$2" | sed 's/\s//g' | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/\b/\\x/'
-    echo
-    ;;
-  -wre | -erw | -rwe | -ewr | -wer | -rew)
-    echo -e ${green}"Hex value reversed with whitespace!"${none}
-    echo -n "$2" | sed 's/\\x/ /g' | sed 's/^\s//'
-    echo
-    ;;
-  -E)
-    echo -e ${green}"Converted the text to hex!"${none}
-    echo -n "$2" | xxd -ps
-    ;;
-  -D)
-    echo -e ${green}"Reversed the hex to text!"${none}
-    echo -n "$2" | xxd -ps -r
-    echo
-    ;;
-  *)
-    usage
-    exit 2
-    ;;
+    -e)
+        echo -e ${green}"Hex value escaped!"${none}
+        echo -n "$2" | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/^/\\x/'
+        echo
+        ;;
+    -r)
+        echo -e ${green}"Hex value reversed the escape!"${none}
+        echo -n "$2" | sed 's/\\x//g'
+        echo
+        ;;
+    -we | -ew)
+        echo -e ${green}"Hex value with whitespace is escaped!"${none}
+        echo -n "$2" | sed 's/\s//g' | fold -w 2 | tr "\n" " " | sed 's/\s/\\x/g' | sed 's/\\x$/ /' | sed 's/\b/\\x/'
+        echo
+        ;;
+    -wre | -erw | -rwe | -ewr | -wer | -rew)
+        echo -e ${green}"Hex value reversed with whitespace!"${none}
+        echo -n "$2" | sed 's/\\x/ /g' | sed 's/^\s//'
+        echo
+        ;;
+    -w)
+        echo -e ${green}"Hex value White Spaced!"${none}
+        echo -n "$2" | fold -w 2 | tr "\n" " "
+        echo
+        ;;
+    -E)
+        echo -e ${green}"Converted the text to hex!"${none}
+        echo -n "$2" | xxd -ps
+        ;;
+    -D)
+        echo -e ${green}"Reversed the hex to text!"${none}
+        echo -n "$2" | xxd -ps -r
+        echo
+        ;;
+    *)
+        usage
+        exit 2
+        ;;
 esac
