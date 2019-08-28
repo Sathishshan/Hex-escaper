@@ -31,7 +31,7 @@ shan@exploit:~$ ./hexescaper.sh -r "\x68\x65\x78\x65\x73\x63\x61\x70\x65\x72"
 Hex value reversed the escape!
 68657865736361706572
 ```
-````
+```
 shan@exploit:~$ ./hexescaper -d "\x68\x65\x78\x65\x73\x63\x61\x70\x65\x72"
 Hex value escape the escaped!
 \\x68\\x65\\x78\\x65\\x73\\x63\\x61\\x70\\x65\\x72
@@ -60,6 +60,5 @@ shan@exploit:~$ ./hexescaper.sh -D "68657865736361706572"
 Reversed the hex to text!
 hexescaper
 ```
-
 #### Caution:   
 The hex values not have been validated it is hex or not, so if you give correct input it will give you the correct output!
