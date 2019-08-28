@@ -15,9 +15,11 @@ ${blue}EXAMPLE:${none}
 ${blue}OPTIONS:${none}
         -e              Escape_hex
         -r              Reverse_hex_escape
+        -d              Double_escape - (escape the escape)
+        -dr             Reversed_double_escape
         -we             White_escape
         -wre            White_reverse_escape
-        -w              Just white space b/w hex
+        -w              Just_white space b/w hex
         -E              Encode_hex - (Convert)
         -D              Reverse_hex - (Decode)"
 }
@@ -38,6 +40,16 @@ case "$1" in
     -r)
         echo -e ${green}"Hex value reversed the escape!"${none}
         echo -n "$2" | sed 's/\\x//g'
+        echo
+        ;;
+    -d)
+        echo -e ${green}"Hex value escape the escaped!"${none}
+        echo -n "$2" | sed 's/\x/\\\x/g'
+        echo
+        ;;
+    -dr|-rd)
+        echo -e ${green}"Hex value reversed the double escape!"${none}
+        echo -n "$2"
         echo
         ;;
     -we | -ew)
