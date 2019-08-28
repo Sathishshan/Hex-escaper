@@ -26,7 +26,7 @@ ${blue}OPTIONS:${none}
 
 if [ ${#} -ne 2 ]; then
         echo -e ${none}"Need two arguments to run the script."${none}
-  echo
+	echo
         usage
         exit
 fi
