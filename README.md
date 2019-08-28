@@ -8,15 +8,17 @@ Need two arguments to run the script.
 Please use the hex value in double quotes! :D
 
 USAGE:
-        ./escape_hex Option Hex
+        ./hexescaper Option Hex
 EXAMPLE:
-        ./escape_hex -e "735f796172612d72756c65736574"
+        ./hexescaper -e "735f796172612d72756c65736574"
 OPTIONS:
         -e              Escape_hex
         -r              Reverse_hex_escape
+        -d              Double_escape - (escape the escape)
+        -dr             Reversed_double_escape
         -we             White_escape
         -wre            White_reverse_escape
-        -w              Just white space b/w hex
+        -w              Just_white space b/w hex
         -E              Encode_hex - (Convert)
         -D              Reverse_hex - (Decode)
 ```
