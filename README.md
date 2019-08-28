@@ -16,6 +16,7 @@ OPTIONS:
         -r              Reverse_hex_escape
         -we             White_escape
         -wre            White_reverse_escape
+        -w              Just white space b/w hex
         -E              Encode_hex - (Convert)
         -D              Reverse_hex - (Decode)
 ```
@@ -27,6 +28,15 @@ Hex value escaped!
 shan@exploit:~$ ./hexescaper.sh -r "\x68\x65\x78\x65\x73\x63\x61\x70\x65\x72"
 Hex value reversed the escape!
 68657865736361706572
+```
+````
+shan@exploit:~$ ./hexescaper -d "\x68\x65\x78\x65\x73\x63\x61\x70\x65\x72"
+Hex value escape the escaped!
+\\x68\\x65\\x78\\x65\\x73\\x63\\x61\\x70\\x65\\x72
+
+shan@exploit:~$ ./hexescaper -dr "\\x68\\x65\\x78\\x65\\x73\\x63\\x61\\x70\\x65\\x72" 
+Hex value reversed the double escape!
+\x68\x65\x78\x65\x73\x63\x61\x70\x65\x72
 ```
 ```
 shan@exploit:~$ ./hexescaper.sh -we "68 65 78 65 73 63 61 70 65 72"
