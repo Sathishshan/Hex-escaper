@@ -73,7 +73,7 @@ case "$1" in
         ;;
     -D)
         echo -e ${green}"Reversed the hex to text!"${none}
-        echo -n "$2" | xxd -ps -r
+        echo -n "$2" | sed 's/\\x//g' | xxd -ps -r
         echo
         ;;
     *)
